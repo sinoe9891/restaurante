@@ -1,5 +1,31 @@
 <?php
+date_default_timezone_set('America/Tegucigalpa');
 include 'inc/templates/header.php';
+// include 'inc/sesiones.php';
+session_start();
+// if (!isset($_SESSION['session'])) {
+// 	// header('Location: login.php');
+// 	echo $_SESSION['session'];
+// 	exit;
+// }
+$name = $_SESSION['nombre_usuario'];
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
+// echo $_SESSION['login'];
+// print_r($_SESSION);
+// print_r($_POST);
+$today = getdate();
+$hora = $today["hours"];
+if ($hora < 6) {
+	$saludo = " Hoy has madrugado mucho... ";
+} elseif ($hora < 12) {
+	$saludo = " Buenos días ";
+} elseif ($hora <= 18) {
+	$saludo = "Buenas Tardes ";
+} else {
+	$saludo = "Buenas Noches ";
+}
 ?>
 
 <body>
@@ -23,7 +49,7 @@ include 'inc/templates/header.php';
 				<div class="container my-5 py-5">
 					<div class="row ">
 						<div class="col-lg-12 text-center text-lg-start">
-							<h6 class="display-3 text-white animated text-center">Bienvenidos @</h6>
+							<h6 class="display-3 text-white animated text-center"><?php echo $saludo . $_SESSION["nombre_usuario"]; ?></h6>
 						</div>
 					</div>
 				</div>
@@ -36,20 +62,12 @@ include 'inc/templates/header.php';
 		<div class="container-xxl py-5">
 			<div class="container">
 				<div class="row g-4">
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="service-item rounded pt-3">
-							<div class="p-4">
-								<i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-								<h5>Master Chefs</h5>
-								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-							</div>
-						</div>
-					</div>
+
 					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
 						<div class="service-item rounded pt-3">
 							<div class="p-4">
 								<i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-								<h5>Quality Food</h5>
+								<h5>Menú</h5>
 								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
 							</div>
 						</div>
@@ -58,7 +76,27 @@ include 'inc/templates/header.php';
 						<div class="service-item rounded pt-3">
 							<div class="p-4">
 								<i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
-								<h5>Online Order</h5>
+								<h5>Ordenes</h5>
+								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="service-item rounded pt-3">
+							<a href="usuarios">
+								<div class="p-4">
+									<i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
+									<h5>Usuarios</h5>
+									<!-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> -->
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+						<div class="service-item rounded pt-3">
+							<div class="p-4">
+								<i class="fa fa-3x fa-headset text-primary mb-4"></i>
+								<h5>24/7 Soporte</h5>
 								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
 							</div>
 						</div>
@@ -67,7 +105,43 @@ include 'inc/templates/header.php';
 						<div class="service-item rounded pt-3">
 							<div class="p-4">
 								<i class="fa fa-3x fa-headset text-primary mb-4"></i>
-								<h5>24/7 Service</h5>
+								<h5>Comentarios</h5>
+								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+						<div class="service-item rounded pt-3">
+							<div class="p-4">
+								<i class="fa fa-3x fa-headset text-primary mb-4"></i>
+								<h5>Mesas</h5>
+								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+						<div class="service-item rounded pt-3">
+							<div class="p-4">
+								<i class="fa fa-3x fa-headset text-primary mb-4"></i>
+								<h5>Recetas</h5>
+								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+						<div class="service-item rounded pt-3">
+							<div class="p-4">
+								<i class="fa fa-3x fa-headset text-primary mb-4"></i>
+								<h5>Métricas</h5>
+								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+						<div class="service-item rounded pt-3">
+							<div class="p-4">
+								<i class="fa fa-3x fa-headset text-primary mb-4"></i>
+								<h5>Facturación</h5>
 								<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
 							</div>
 						</div>

@@ -61,7 +61,7 @@ if ($accion === 'login') {
 		} else {
 			$respuesta = array(
 				'error' => 'Usuario no existe!',
-				'respuesta' => 'correcto',
+				'respuesta' => 'noexiste',
 				'nombre' => $email_user,
 				'apellidos' => $apellidos,
 				'username' => $username,

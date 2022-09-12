@@ -41,7 +41,9 @@ function validarRegistro(e) {
                         //si es un nuevo usuario 
 						if (respuesta.tipo === 'login') {
 							//redireccionar a la pagina principal
+							console.log(respuesta);
 							window.location.href = 'dashboard.php';
+							
 						} else if (respuesta.tipo == 'crear') {
                             Swal.fire({
 								icon: 'success',
@@ -58,6 +60,12 @@ function validarRegistro(e) {
                             icon: 'error',
                             title: 'Oops...',
                             text: 'Usuario Deshabilitado'
+                        })
+					}else if (respuesta.respuesta === 'noexiste'){
+						Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'El usuario con el que quieres acceder no éxiste!'
                         })
 					}else {
                         Swal.fire({

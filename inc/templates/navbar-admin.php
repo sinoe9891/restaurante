@@ -15,9 +15,9 @@
 			<div class="nav-item dropdown">
 				<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Analytics</a>
 				<div class="dropdown-menu m-0">
-					<a href="booking" class="dropdown-item">Booking</a>
-					<a href="team" class="dropdown-item">Our Team</a>
-					<a href="testimonial" class="dropdown-item">Testimonial</a>
+					<a href="booking" class="dropdown-item">Comportamiento</a>
+					<a href="team" class="dropdown-item">Adquisición</a>
+					<a href="testimonial" class="dropdown-item">Balance</a>
 				</div>
 			</div>
 			<a href="contact" class="nav-item nav-link">Soporte</a>
